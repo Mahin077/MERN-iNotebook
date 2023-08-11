@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const NotesSchema = new Schema({
+    user:{
+        //foreign key
+        type: mongoose.Schema.Types.ObjectId,
+        //in the database there is an user table
+        ref: 'user'
+    },
     title:{
         type: String,
         required: true
