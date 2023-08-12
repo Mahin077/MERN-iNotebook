@@ -1,29 +1,77 @@
 import NoteContext from "./noteContext";
 import { useState } from "react";
-//use the context here
 
-const NoteState =(props)=>{
-    //take an object
-    const s1 = {
-        "name":"Mahin",
-        "class": "A1"
-    }
-    //save the val in the state
-    const[state, setState] = useState(s1);
+const NoteState = (props)=>{
+    const notesInitial = [
+        {
+          "_id": "61322f19553781a8ca8d0e06",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.509Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+      ]
+      const [notes, setNotes] = useState(notesInitial)
 
-    //a func to change the obj after 1 sec
-    const  update = ()=>{
-        setTimeout(()=>{
-            setState({
-                "name":"Raz",
-                "class":"10b"
-            })
-        },1000);
-    }
-
-    return(
-        //NoteContext is the name we used while importing the context file
-        <NoteContext.Provider value={{state,update}}>
+    
+    return (
+        <NoteContext.Provider value={{notes, setNotes}}>
             {props.children}
         </NoteContext.Provider>
     )
