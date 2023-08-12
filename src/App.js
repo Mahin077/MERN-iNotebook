@@ -7,10 +7,12 @@ import {
 import Home from './Component/Home';
 import About from './Component/About';
 import Navbar from './Component/Navbar';
+import NoteState from './context/NoteState';
 
 function App() {
   return (
     <>
+    <NoteState>
       <Router>
         <Navbar />
         <Routes>
@@ -18,6 +20,7 @@ function App() {
           <Route exact path='/about' element={<About />} />
         </Routes>
       </Router>
+      </NoteState>
     </>
   );
 }
